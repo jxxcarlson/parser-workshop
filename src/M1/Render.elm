@@ -1,13 +1,23 @@
-module M1.Render exposing (render)
+module M1.Render exposing (renderDocument, renderElements)
 
 import M1.Parse as Parse exposing (Element(..))
 
 
-render : List Element -> String
-render elementList =
+renderElements : List Element -> String
+renderElements elementList =
     elementList
         |> List.map renderElement
         |> String.join "\n\n"
+
+
+renderDocument : String -> String
+renderDocument content =
+    case Parse.parseDocument content of
+        Ok ast ->
+            renderElements ast
+
+        _ ->
+            "Error"
 
 
 renderElement : Element -> String
