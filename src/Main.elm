@@ -1,6 +1,7 @@
 port module Main exposing (main)
 
-import Mark
+import M1.Parse as Parse
+import M1.Render as Render
 import Platform exposing (Program)
 
 
@@ -82,7 +83,10 @@ subscriptions _ =
 -}
 
 
+aa =
+    "|h foo\n\n|s bar\n\nyada\nyada\n\nfee\nfie\nfo!\n\n"
+
+
 transform : InputType -> InputType
 transform inp =
-    Mark.parse inp
-        |> Term.stringValue
+    Parse.parseDocument inp |> Debug.toString
