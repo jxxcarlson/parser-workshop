@@ -10,8 +10,8 @@ type alias Date =
     }
 
 
-usDate : Parser Date
-usDate =
+date : Parser Date
+date =
     succeed Date
         |= int
         |. symbol "/"
