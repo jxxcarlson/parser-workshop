@@ -20,7 +20,7 @@ When parsed, it is transformed into the data structure
 
 While it may not look like it, this is a tree, as in the figure below.
 
-![ast](ast.jpg)
+![ast](image/ast.jpg)
 
 ## Primitives and combinators 
 
